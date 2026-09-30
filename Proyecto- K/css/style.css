@@ -1,0 +1,195 @@
+/* --- ESTILOS GENERALES Y BASE --- */
+body { 
+    background: linear-gradient(to bottom, #4E2394, #DBC9F5);
+    margin: 0; 
+    min-height: 100vh;
+    font-family: sans-serif; /* Una tipografía limpia ayuda mucho */
+}
+
+/* --- CONTENEDOR SUPERIOR (HEADER) --- */
+header {  
+    /* Convierte el header en una caja flotante elegante estilo cristal */
+    background-color: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(8px);                  /* Difumina el fondo morado */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borde fino brillante */
+    border-radius: 16px;                         /* Bordes redondeados */
+    
+    /* Espaciados y tamaño de la caja (mismo ancho que el nav para simetría) */
+    max-width: 600px;                            
+    margin: 40px auto 25px auto;                 /* Centrado y separado del menú */
+    padding: 30px 20px;                          /* Espacio interno */
+    text-align: center; 
+    
+    /* Sombra suave para dar profundidad */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* El título principal h1 con efecto Arcoíris */
+header h1 {
+    font-size: 2.8rem; 
+    margin: 0 0 8px 0; 
+    font-weight: 800;
+    letter-spacing: 1px;
+    
+    /* Definimos los colores del arcoíris */
+    background: linear-gradient(
+        45deg, 
+        #ff007f, 
+        #ff7b00, 
+        #ffea00, 
+        #00f5d4, 
+        #7b2cbf, 
+        #ff007f  
+    );
+    background-size: 400% 400%;
+    
+    /* MÁGICA: Corta el fondo para que solo se vea DENTRO de las letras */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* Hace que el color original sea transparente para ver el arcoíris */
+    -webkit-text-fill-color: transparent;
+    color: transparent; 
+    
+    /* Activamos la animación fluida */
+    animation: arcoiris-animado 8s ease infinite;
+}
+
+/* Estilos específicos para el párrafo dentro del header */
+header p {
+    color: #f3ebff !important; 
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    background: none !important; /* Evita que herede el degradado de los párrafos comunes */
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+}
+
+/* Estilo para el texto pequeño o suelto dentro del header */
+header small, header {
+    color: rgba(255, 255, 255, 0.7); 
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* --- ANIMACIÓN DEL ARCOÍRIS --- */
+@keyframes arcoiris-animado {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* --- NAVEGACIÓN (NAV) --- */
+nav { 
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1); /* Efecto cristal */
+    backdrop-filter: blur(5px); 
+    border-radius: 8px; 
+    max-width: 600px; 
+    margin: 0 auto 40px auto; /* Centrado con espacio abajo */
+}
+
+nav a {
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease; 
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+/* --- ELEMENTOS DE TEXTO GENERALES --- */
+div h3 {
+    color: whitesmoke;
+}
+
+p {
+    background: linear-gradient(to bottom, #FFFFFF, #6c3b97);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: white;
+}   
+
+/* --- SECCIÓN DE BIENVENIDA --- */
+.bienvenida {
+    max-width: 760px;          
+    margin: 40px auto 20px auto; 
+    padding: 30px;             
+    text-align: center;        
+    background-color: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(8px);                 
+    border-radius: 16px;                        
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+.bienvenida h2 {
+    color: white;              
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.bienvenida p {
+    color: #f3ebff;            
+    font-size: 1.1rem;
+    line-height: 1.6;          
+    margin: 0;
+}
+
+/* --- TARJETAS (CARDS) --- */
+.tarjetas {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 40px;
+}
+
+.tarjeta {
+    background-color: #242a2c;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.tarjeta button {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* --- SECCIÓN DE IMAGEN (HERO) --- */
+.hero-simple {
+    display: flex;
+    justify-content: center; 
+    padding: 40px 20px;     
+}
+
+.hero-simple img {
+    max-width: 90%; /* Corregido el error del "90%2" */
+    width: 800px;           
+    border-radius: 12px;    
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* --- FOOTER --- */
+footer {
+    background: linear-gradient(to bottom, #4E2394, #DBC9F5);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
